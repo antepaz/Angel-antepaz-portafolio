@@ -64,7 +64,6 @@
     border: 1px solid rgba(59, 130, 246, 0.2);
   }
   
-  /* TEXTO REDUCIDO */
   .hero h1 {
     font-size: clamp(32px, 5vw, 48px); 
     font-weight: 800;
@@ -126,7 +125,7 @@
     .grid-proyectos { grid-template-columns: 1fr 1fr; }
   }
 
-  /* TARJETAS SIN SUBRAYADO AZUL */
+  /* TARJETAS */
   .card-proyecto {
     background: var(--card-bg);
     border: 1px solid var(--borde);
@@ -205,8 +204,27 @@
   .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
   .reveal.active { opacity: 1; transform: translateY(0); }
 
-  /* OCULTAR BADGE NETLIFY */
-  iframe[src*="netlify"], .netlify-badge, div[id*="netlify"], div[style*="position: fixed"][style*="bottom: 0px"][style*="right: 0px"] { display: none !important; }
+  /* ==================== OCULTAR BADGE NETLIFY (VERSIÓN EXTREMA) ==================== */
+  iframe[src*="netlify"], 
+  iframe[title*="Netlify"],
+  .netlify-badge,
+  div[id*="netlify"],
+  #netlify-badge,
+  a[href*="netlify.com"],
+  div[style*="position: fixed"][style*="bottom: 0px"],
+  div[style*="position: fixed"][style*="bottom: 0;"],
+  div[style*="position:fixed"][style*="bottom:0px"],
+  div[style*="position:fixed"][style*="bottom:0;"],
+  div[data-netlify="true"],
+  [data-netlify-badge] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    z-index: -9999 !important;
+  }
 </style>
 </head>
 <body>

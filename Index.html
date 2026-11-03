@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Antepaz | Desarrollador Web</title>
+<meta name="description" content="Portafolio de desarrollo web. Creamos páginas modernas, rápidas y automatizadas para tu negocio.">
+
+<!-- ================= OPEN GRAPH ================= -->
+<meta property="og:title" content="Angel Antepaz | Desarrollador Web">
+<meta property="og:description" content="Portafolio de diseño y desarrollo web. Páginas modernas y automatizadas.">
+<meta property="og:type" content="website">
+<!-- ============================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --texto: #f8fafc;
+    --texto-gris: #94a3b8;
+    --acento: #3b82f6; /* Azul brillante */
+    --acento-hover: #2563eb;
+    --borde: #334155;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .contenedor { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 50%);
+  }
+  .hero-content { max-width: 800px; z-index: 2; }
+  
+  .hero-badge {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--acento);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+  
+  /* TEXTO REDUCIDO */
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 48px); 
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+  }
+  .hero h1 span { color: var(--acento); }
+  
+  .hero p {
+    font-size: 16px;
+    color: var(--texto-gris);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-botones { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .btn-primario {
+    background: var(--acento);
+    color: white;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  }
+  .btn-primario:hover { background: var(--acento-hover); transform: translateY(-2px); }
+  
+  .btn-secundario {
+    background: transparent;
+    color: var(--texto);
+    border: 1px solid var(--borde);
+  }
+  .btn-secundario:hover { background: var(--card-bg); border-color: var(--texto-gris); }
+
+  /* PROYECTOS */
+  .proyectos { padding: 100px 0; }
+  .titulo-seccion { margin-bottom: 60px; }
+  .titulo-seccion h2 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+  .titulo-seccion p { color: var(--texto-gris); font-size: 16px; }
+  
+  .grid-proyectos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  @media(min-width: 768px) {
+    .grid-proyectos { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* TARJETAS SIN SUBRAYADO AZUL */
+  .card-proyecto {
+    background: var(--card-bg);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; 
+    color: inherit; 
+  }
+  .card-proyecto:hover {
+    transform: translateY(-8px);
+    border-color: var(--acento);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  }
+
+  .proyecto-img {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    position: relative;
+  }
+  .proyecto-img::after {
+    content: "Ver Demo";
+    position: absolute;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(4px);
+  }
+  .card-proyecto:hover .proyecto-img::after { opacity: 1; }
+
+  .bg-helado { background: linear-gradient(135deg, #00a8ff, #0077cc); }
+  .bg-hotel { background: linear-gradient(135deg, #8a151b, #002a5c); }
+  .bg-candido { background: linear-gradient(135deg, #f26522, #009245); }
+  .bg-bera { background: linear-gradient(135deg, #111111, #d32f2f); }
+
+  .proyecto-info { padding: 25px; flex: 1; display: flex; flex-direction: column; }
+  .proyecto-info h3 { font-size: 22px; font-weight: 800; margin-bottom: 5px; }
+  .proyecto-info .tipo { font-size: 13px; color: var(--acento); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: block; }
+  .proyecto-info p { color: var(--texto-gris); font-size: 15px; margin-bottom: 25px; flex: 1; }
+  
+  .link-proyecto {
+    display: inline-flex;
+    align-items: center;
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .link-proyecto:hover { color: var(--acento); }
+  .link-proyecto::after { content: "→"; margin-left: 8px; transition: transform 0.2s; }
+  .link-proyecto:hover::after { transform: translateX(5px); }
+
+  /* FOOTER / CONTACTO */
+  .contacto { padding: 80px 0; text-align: center; border-top: 1px solid var(--borde); background: #0b1120; }
+  .contacto h2 { font-size: 36px; font-weight: 800; margin-bottom: 20px; }
+  .contacto p { color: var(--texto-gris); margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  
+  .footer-social { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; }
+  .footer-social a { color: var(--texto-gris); text-decoration: none; font-size: 15px; transition: color 0.2s; }
+  .footer-social a:hover { color: var(--texto); }
+
+  .footer-copy { font-size: 13px; color: #64748b; padding-top: 20px; border-top: 1px solid var(--borde); }
+
+  /* ANIMACIONES SCROLL */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+
+  /* OCULTAR BADGE NETLIFY */
+  iframe[src*="netlify"], .netlify-badge, div[id*="netlify"], div[style*="position: fixed"][style*="bottom: 0px"][style*="right: 0px"] { display: none !important; }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content reveal">
+      <div class="hero-badge">Disponible para nuevos proyectos</div>
+      <h1>Hola, soy <span>Angel Antepaz</span>.<br>Creo experiencias digitales.</h1>
+      <p>Diseño y desarrollo páginas web modernas, rápidas y automatizadas. Ayudo a los negocios a vender más y ahorrar tiempo en su día a día.</p>
+      <div class="hero-botones">
+        <a href="#proyectos" class="btn btn-primario">Ver mis proyectos</a>
+        <a href="https://wa.me/584129219389" target="_blank" class="btn btn-secundario">Contactar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="proyectos">
+    <div class="contenedor">
+      <div class="titulo-seccion reveal">
+        <h2>Trabajos Recientes</h2>
+        <p>Una selección de plataformas diseñadas para resolver problemas reales de negocios.</p>
+      </div>
+
+      <div class="grid-proyectos">
+        
+        <!-- Papá Helado -->
+        <a href="https://papa-helad-demo.netlify.app" target="_blank" class="card-proyecto reveal">
+          <div class="proyecto-img bg-helado">🍦</div>
+          <div class="proyecto-info">
+            <span class="tipo">E-commerce / Heladería</span>
+            <h3>Papá Helado</h3>
+            <p>Catálogo interactivo con carrito de compras automatizado. Los pedidos se envían estructurados directamente al WhatsApp del negocio.</p>
+            <span class="link-proyecto">Explorar proyecto</span>
+          </div>
+        </a>
+
+        <!-- Hotel América -->
+        <a href="https://hotel-america-demo.netlify.app" target="_blank" class="card-proyecto reveal">
+          <div class="proyecto-img bg-hotel">🏨</div>
+          <div class="proyecto-info">
+            <span class="tipo">Reservas / Hotelería</span>
+            <h3>Hotel América</h3>
+            <p>Plataforma premium con galería de fotos, sistema de reservas inteligente y diseño adaptado para transmitir lujo y confianza.</p>
+            <span class="link-proyecto">Explorar proyecto</span>
+          </div>
+        </a>
+
+        <!-- De Cándido -->
+        <a href="https://de-candido-demo.netlify.app" target="_blank" class="card-proyecto reveal">
+          <div class="proyecto-img bg-candido">🛒</div>
+          <div class="proyecto-info">
+            <span class="tipo">Catálogo / Supermercado</span>
+            <h3>De Cándido</h3>
+            <p>Sitio web con acordeón de sedes, recetario interactivo con buscador en tiempo real y sección de consejos para el hogar.</p>
+            <span class="link-proyecto">Explorar proyecto</span>
+          </div>
+        </a>
+
+        <!-- Motos Bera -->
+        <a href="https://motos-bera-demo.netlify.app" target="_blank" class="card-proyecto reveal">
+          <div class="proyecto-img bg-bera">🏍️</div>
+          <div class="proyecto-info">
+            <span class="tipo">Cotizador / Automotriz</span>
+            <h3>Motos BERA</h3>
+            <p>Concesionario digital. Los clientes pueden ver especificaciones, elegir color y generar una orden de compra automática.</p>
+            <span class="link-proyecto">Explorar proyecto</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO / FOOTER -->
+  <footer class="contacto">
+    <div class="contenedor reveal">
+      <h2>¿Trabajamos juntos?</h2>
+      <p>Si tienes un negocio y quieres llevar tu presencia digital al siguiente nivel, hablemos.</p>
+      
+      <div class="footer-social">
+        <a href="https://wa.me/584129219389" target="_blank">WhatsApp</a>
+      </div>
+      
+      <div class="footer-copy">
+        © 2026 Angel Antepaz. Diseñador y Desarrollador Web.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Animaciones al hacer Scroll
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { root: null, rootMargin: '0px', threshold: 0.15 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>

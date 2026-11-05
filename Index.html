@@ -125,7 +125,6 @@
     .grid-proyectos { grid-template-columns: 1fr 1fr; }
   }
 
-  /* TARJETAS */
   .card-proyecto {
     background: var(--card-bg);
     border: 1px solid var(--borde);
@@ -150,7 +149,20 @@
     justify-content: center;
     font-size: 80px;
     position: relative;
+    overflow: hidden;
   }
+  
+  .proyecto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s;
+  }
+  .card-proyecto:hover .proyecto-img img {
+    transform: scale(1.05);
+  }
+
   .proyecto-img::after {
     content: "Ver Demo";
     position: absolute;
@@ -163,13 +175,16 @@
     opacity: 0;
     transition: opacity 0.3s;
     backdrop-filter: blur(4px);
+    z-index: 2;
   }
   .card-proyecto:hover .proyecto-img::after { opacity: 1; }
 
+  /* FONDOS (Por si prefieres dejar los emojis) */
   .bg-helado { background: linear-gradient(135deg, #00a8ff, #0077cc); }
   .bg-hotel { background: linear-gradient(135deg, #8a151b, #002a5c); }
   .bg-candido { background: linear-gradient(135deg, #f26522, #009245); }
   .bg-bera { background: linear-gradient(135deg, #111111, #d32f2f); }
+  .bg-terraza { background: linear-gradient(135deg, #c56a2b, #0a0a0a); }
 
   .proyecto-info { padding: 25px; flex: 1; display: flex; flex-direction: column; }
   .proyecto-info h3 { font-size: 22px; font-weight: 800; margin-bottom: 5px; }
@@ -204,27 +219,8 @@
   .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
   .reveal.active { opacity: 1; transform: translateY(0); }
 
-  /* ==================== OCULTAR BADGE NETLIFY (VERSIÓN EXTREMA) ==================== */
-  iframe[src*="netlify"], 
-  iframe[title*="Netlify"],
-  .netlify-badge,
-  div[id*="netlify"],
-  #netlify-badge,
-  a[href*="netlify.com"],
-  div[style*="position: fixed"][style*="bottom: 0px"],
-  div[style*="position: fixed"][style*="bottom: 0;"],
-  div[style*="position:fixed"][style*="bottom:0px"],
-  div[style*="position:fixed"][style*="bottom:0;"],
-  div[data-netlify="true"],
-  [data-netlify-badge] {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    z-index: -9999 !important;
-  }
+  /* OCULTAR BADGE NETLIFY */
+  iframe[src*="netlify"], .netlify-badge, div[id*="netlify"], div[style*="position: fixed"][style*="bottom: 0px"][style*="right: 0px"] { display: none !important; }
 </style>
 </head>
 <body>
@@ -252,6 +248,17 @@
 
       <div class="grid-proyectos">
         
+        <!-- TERRAZA OJEDA SUITE (EL NUEVO) -->
+        <a href="https://ojeda-suite-demo.netlify.app/" target="_blank" class="card-proyecto reveal">
+          <div class="proyecto-img bg-terraza">🍹</div>
+          <div class="proyecto-info">
+            <span class="tipo">Menú & Reservas / Restaurante</span>
+            <h3>Terraza Ojeda Suite</h3>
+            <p>Diseño oscuro premium para Bar & Grill. Menú interactivo por categorías (sin recargar), carrusel de ambiente y sistema de reservas por WhatsApp.</p>
+            <span class="link-proyecto">Explorar proyecto</span>
+          </div>
+        </a>
+
         <!-- Papá Helado -->
         <a href="https://papa-helad-demo.netlify.app" target="_blank" class="card-proyecto reveal">
           <div class="proyecto-img bg-helado">🍦</div>

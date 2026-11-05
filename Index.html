@@ -39,14 +39,14 @@
 
   .contenedor { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-  /* HERO */
+  /* HERO CORREGIDO */
   .hero {
-    min-height: 100vh;
+    min-height: 90vh; /* Reducido para que no haya tanto espacio vertical */
     display: flex;
-    align-items: center;
+    align-items: center; /* Mantiene el centrado vertical pero con menos altura general */
     justify-content: center;
     text-align: center;
-    padding: 40px 20px;
+    padding: 120px 20px 60px; /* Más espacio arriba, menos abajo */
     position: relative;
     background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 50%);
   }
@@ -219,8 +219,22 @@
   .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
   .reveal.active { opacity: 1; transform: translateY(0); }
 
-  /* OCULTAR BADGE NETLIFY */
-  iframe[src*="netlify"], .netlify-badge, div[id*="netlify"], div[style*="position: fixed"][style*="bottom: 0px"][style*="right: 0px"] { display: none !important; }
+  /* ==================== OCULTAR BADGE NETLIFY (REFORZADO) ==================== */
+  iframe[src*="netlify"],
+  iframe[title*="Netlify"],
+  .netlify-badge,
+  div[id*="netlify"],
+  a[href*="netlify.com"][target="_blank"],
+  div[style*="position: fixed"][style*="bottom: 0px"][style*="right: 0px"],
+  div[style*="position:fixed"][style*="bottom:0px"][style*="right:0px"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    z-index: -9999 !important;
+  }
 </style>
 </head>
 <body>

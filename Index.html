@@ -3,14 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Angel Antepaz | Desarrollador Web</title>
-<meta name="description" content="Portafolio de desarrollo web. Creamos páginas modernas, rápidas y automatizadas para tu negocio.">
+<title>Ojeda Web Studio | Desarrollo Web</title>
+<meta name="description" content="Ojeda Web Studio - Creamos páginas web modernas, rápidas y automatizadas para hacer crecer tu negocio.">
 
-<!-- ================= OPEN GRAPH ================= -->
-<meta property="og:title" content="Angel Antepaz | Desarrollador Web">
-<meta property="og:description" content="Portafolio de diseño y desarrollo web. Páginas modernas y automatizadas.">
+<!-- ================= OPEN GRAPH (VISTA PREVIA EN WHATSAPP) ================= -->
+<meta property="og:title" content="Ojeda Web Studio 💻 | Desarrollo Web Profesional">
+<meta property="og:description" content="Diseño y desarrollo páginas web modernas, rápidas y automatizadas para tu negocio.">
+<!-- NOTA: Cambia esta URL por una captura de tu portafolio que hayas subido a Postimages -->
+<meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80">
+<meta property="og:url" content="https://angel-antepaz-portafolio.netlify.app/">
 <meta property="og:type" content="website">
-<!-- ============================================== -->
+<meta name="twitter:card" content="summary_large_image">
+<!-- ========================================================================= -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,14 +43,14 @@
 
   .contenedor { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-  /* HERO CORREGIDO */
+  /* HERO */
   .hero {
-    min-height: 90vh; /* Reducido para que no haya tanto espacio vertical */
+    min-height: 90vh; 
     display: flex;
-    align-items: center; /* Mantiene el centrado vertical pero con menos altura general */
+    align-items: center; 
     justify-content: center;
     text-align: center;
-    padding: 120px 20px 60px; /* Más espacio arriba, menos abajo */
+    padding: 120px 20px 60px; 
     position: relative;
     background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 50%);
   }
@@ -179,7 +183,7 @@
   }
   .card-proyecto:hover .proyecto-img::after { opacity: 1; }
 
-  /* FONDOS (Por si prefieres dejar los emojis) */
+  /* FONDOS */
   .bg-helado { background: linear-gradient(135deg, #00a8ff, #0077cc); }
   .bg-hotel { background: linear-gradient(135deg, #8a151b, #002a5c); }
   .bg-candido { background: linear-gradient(135deg, #f26522, #009245); }
@@ -219,21 +223,13 @@
   .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
   .reveal.active { opacity: 1; transform: translateY(0); }
 
-  /* ==================== OCULTAR BADGE NETLIFY (REFORZADO) ==================== */
-  iframe[src*="netlify"],
-  iframe[title*="Netlify"],
-  .netlify-badge,
-  div[id*="netlify"],
-  a[href*="netlify.com"][target="_blank"],
+  /* ==================== OCULTAR BADGE NETLIFY ==================== */
+  iframe[src*="netlify"], iframe[title*="Netlify"], .netlify-badge,
+  div[id*="netlify"], a[href*="netlify.com"][target="_blank"],
   div[style*="position: fixed"][style*="bottom: 0px"][style*="right: 0px"],
   div[style*="position:fixed"][style*="bottom:0px"][style*="right:0px"] {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    z-index: -9999 !important;
+    display: none !important; visibility: hidden !important; opacity: 0 !important;
+    pointer-events: none !important; width: 0 !important; height: 0 !important; z-index: -9999 !important;
   }
 </style>
 </head>
@@ -243,10 +239,10 @@
   <section class="hero">
     <div class="hero-content reveal">
       <div class="hero-badge">Disponible para nuevos proyectos</div>
-      <h1>Hola, soy <span>Angel Antepaz</span>.<br>Creo experiencias digitales.</h1>
-      <p>Diseño y desarrollo páginas web modernas, rápidas y automatizadas. Ayudo a los negocios a vender más y ahorrar tiempo en su día a día.</p>
+      <h1>Bienvenido a <span>Ojeda Web Studio</span>.<br>Creamos experiencias digitales.</h1>
+      <p>Diseñamos y desarrollamos páginas web modernas, rápidas y automatizadas. Ayudamos a los negocios a vender más y ahorrar tiempo en su día a día.</p>
       <div class="hero-botones">
-        <a href="#proyectos" class="btn btn-primario">Ver mis proyectos</a>
+        <a href="#proyectos" class="btn btn-primario">Ver nuestros proyectos</a>
         <a href="https://wa.me/584129219389" target="_blank" class="btn btn-secundario">Contactar por WhatsApp</a>
       </div>
     </div>
@@ -256,13 +252,13 @@
   <section id="proyectos" class="proyectos">
     <div class="contenedor">
       <div class="titulo-seccion reveal">
-        <h2>Trabajos Recientes</h2>
+        <h2>Nuestros Trabajos</h2>
         <p>Una selección de plataformas diseñadas para resolver problemas reales de negocios.</p>
       </div>
 
       <div class="grid-proyectos">
         
-        <!-- TERRAZA OJEDA SUITE (EL NUEVO) -->
+        <!-- TERRAZA OJEDA SUITE -->
         <a href="https://ojeda-suite-demo.netlify.app/" target="_blank" class="card-proyecto reveal">
           <div class="proyecto-img bg-terraza">🍹</div>
           <div class="proyecto-info">
@@ -332,7 +328,7 @@
       </div>
       
       <div class="footer-copy">
-        © 2026 Angel Antepaz. Diseñador y Desarrollador Web.
+        © 2026 Ojeda Web Studio. Diseño y Desarrollo Web.
       </div>
     </div>
   </footer>
